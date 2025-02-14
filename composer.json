@@ -3,7 +3,7 @@
   "description": "Symfony Bundle for ruler/ruler",
   "type": "syfony-bundle",
   "require": {
-    "php": "8.2",
+    "php": "~8.2 || ~8.3 || ~8.4",
     "ruler/ruler": "dev-custom84",
     "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
     "symfony/http-kernel": "^4.4.20||^5.0.11||^6.0||^7.0"
