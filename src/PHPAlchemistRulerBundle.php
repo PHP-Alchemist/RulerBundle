@@ -2,12 +2,12 @@
 
 namespace PHPAlchemist\RulerBundle;
 
-use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 
-class PHPAlchemistRulerBundle extends AbstractBundle
+class PHPAlchemistRulerBundle extends Bundle
 {
     public function configure(DefinitionConfigurator $definition) : void
     {
