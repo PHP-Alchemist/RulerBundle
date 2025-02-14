@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 
-class PHPAlchemistRulerBundle extends Bundle
+class RulerBundle extends Bundle
 {
     public function configure(DefinitionConfigurator $definition) : void
     {
@@ -23,7 +23,7 @@ class PHPAlchemistRulerBundle extends Bundle
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder) : void
     {
-        $container->import('../config/services.yaml');
+//        $container->import('../config/services.yaml');
 
         // If operators hasn't been set let's just ignore it
         if (isset($config['operators']) && $config['operators'] !== '') {
