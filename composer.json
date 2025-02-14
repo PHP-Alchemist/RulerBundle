@@ -1,0 +1,30 @@
+{
+  "name": "php-alchemist/ruler-bundle",
+  "description": "Symfony Bundle for ruler/ruler",
+  "type": "syfony-bundle",
+  "require": {
+    "php": "8.2",
+    "ruler/ruler": "dev-custom84",
+    "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
+    "symfony/http-kernel": "^4.4.20||^5.0.11||^6.0||^7.0"
+  },
+  "license": "BSD-3-Clause",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:druid628/Ruler.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PHPAlchemist\\RulerBundle\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Micah Breedlove",
+      "email": "druid628@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable"
+}

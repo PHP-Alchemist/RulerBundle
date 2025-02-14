@@ -1,0 +1,37 @@
+<?php
+
+namespace PHPAlchemist\RulerBundle;
+
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
+class PHPAlchemistRulerBundle extends AbstractBundle
+{
+    public function configure(DefinitionConfigurator $definition) : void
+    {
+        $definition->rootNode()
+                    ->children()
+                        ->arrayNode('ruler')->children()
+                            ->scalarNode('operators')->end()
+                            ->end()
+                        ->end() // ruler
+                    ->end()
+        ;
+    }
+
+    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder) : void
+    {
+        $container->import('../config/services.yaml');
+        $container->setParameter('php_alchemist_ruler.operators_namespace', $config['operators']);
+        // the "$config" variable is already merged and processed so you can
+        // use it directly to configure the service container (when defining an
+        // extension class, you also have to do this merging and processing)
+//        $container->services()
+//                  ->get('acme_social.twitter_client')
+//                  ->arg(0, $config['twitter']['client_id'])
+//                  ->arg(1, $config['twitter']['client_secret'])
+//        ;
+    }
+
+}
