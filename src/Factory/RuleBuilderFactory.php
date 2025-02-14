@@ -5,8 +5,10 @@ namespace PHPAlchemist\RulerBundle\Factory;
 use Ruler\RuleBuilder;
 use Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 
 #[Autoconfigure]
+#[AsAlias(id: 'php_alchemist_ruler.builder')]
 class RuleBuilderFactory
 {
     public function __construct(protected ContainerInterface $container)
