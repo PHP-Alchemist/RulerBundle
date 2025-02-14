@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="php_alchemist_ruler.factory.rule_builder"
+                 class="PHPAlchemist\RulerBundle\Factory\RuleBuilderFactory"/>
+        <service id="PHPAlchemist\RulerBundle\Factory\RuleBuilderFactory"
+                 alias="php_alchemist_ruler.factory.rule_builder"/>
+        <service id="Ruler\RuleBuilder">
+            <factory service="PHPAlchemist\RulerBundle\Factory\RuleBuilderFactory"/>
+        </service>
+    </services>
+</container>

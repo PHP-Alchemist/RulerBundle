@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 
 #[Autoconfigure]
-#[AsAlias(id: 'php_alchemist_ruler.builder')]
+#[AsAlias(id: 'php_alchemist_ruler.factory.rule_builder', public: true)]
 class RuleBuilderFactory
 {
     public function __construct(protected ContainerInterface $container)
