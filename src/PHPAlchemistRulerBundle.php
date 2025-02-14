@@ -14,7 +14,7 @@ class PHPAlchemistRulerBundle extends AbstractBundle
         $definition->rootNode()
                     ->children()
                         ->arrayNode('ruler')->children()
-                            ->scalarNode('operators')->end()
+                            ->stringNode('operators')->end()
                             ->end()
                         ->end() // ruler
                     ->end()
@@ -24,7 +24,11 @@ class PHPAlchemistRulerBundle extends AbstractBundle
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder) : void
     {
         $container->import('../config/services.yaml');
-        $container->setParameter('php_alchemist_ruler.operators_namespace', $config['operators']);
+
+        // If operators hasn't been set let's just ignore it
+        if (isset($config['operators']) && $config['operators'] !== '') {
+            $container->setParameter('php_alchemist_ruler.operators_namespace', $config['operators']);
+        }
         // the "$config" variable is already merged and processed so you can
         // use it directly to configure the service container (when defining an
         // extension class, you also have to do this merging and processing)
