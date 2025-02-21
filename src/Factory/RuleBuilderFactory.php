@@ -3,9 +3,9 @@
 namespace PHPAlchemist\RulerBundle\Factory;
 
 use Ruler\RuleBuilder;
+use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 use Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 
 #[Autoconfigure]
 #[AsAlias(id: 'php_alchemist_ruler.factory.rule_builder', public: true)]
@@ -25,5 +25,4 @@ class RuleBuilderFactory
 
         return $builder;
     }
-
 }
