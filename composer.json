@@ -26,5 +26,13 @@
       "email": "druid628@gmail.com"
     }
   ],
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "extra": {
+    "symfony": {
+      "endpoint": [
+        "https://api.github.com/repos/PHP-Alchemist/symfony-recipes/contents/index.json",
+        "flex://defaults"
+      ]
+    }
+  }
 }
